@@ -3,3 +3,5 @@
 terraform.tfvars
 *.tfstate
 *.tfstate.backup
+*.terragrunt
+*.terragrunt-cache
