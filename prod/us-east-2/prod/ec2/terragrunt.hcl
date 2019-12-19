@@ -21,7 +21,7 @@ inputs = {
   server_port = 8080
   elb_port    = 80
 
-  my_ip = 159.224.7.123/32
+  my_ip = "159.224.7.123/32"
   key = "s.litsevychkeys"
 
   dbpass = "${get_env("TF_VAR_master_password_prod", "")}"

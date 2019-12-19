@@ -13,10 +13,10 @@ include {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 inputs = {
   name           = "vpc_stage"
-  vpc_cidr = 172.16.100.0/20
-  public_subnets_cidr = [172.16.100.0/24, 172.16.101.0/24]
-  private_subnets_cidr = [172.16.102.0/24, 172.16.103.0/24]
-  db_subnets_cidr = [172.16.104.0/24, 172.16.105.0/24]
+  vpc_cidr = "172.16.100.0/20"
+  public_subnets_cidr = ["172.16.100.0/24", "172.16.101.0/24"]
+  private_subnets_cidr = ["172.16.102.0/24", "172.16.103.0/24"]
+  db_subnets_cidr = ["172.16.104.0/24", "172.16.105.0/24"]
 
 
 }

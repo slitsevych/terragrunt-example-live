@@ -13,7 +13,7 @@ remote_state {
     bucket         = "terragrunt-example-stepan"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-2"
-    dynamodb_table = "terragrunt-locks"
+    dynamodb_table = "terraform-state-lock-dynamo"
   }
 }
 
