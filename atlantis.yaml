@@ -1,0 +1,12 @@
+version: 3
+projects:
+- dir: stage/us-east-2
+  workflow: terragrunt
+workflows:
+  terragrunt:
+    plan:
+      steps:
+      - run: terragrunt plan-all -no-color -out $PLANFILE
+    apply:
+      steps:
+      - run: terragrunt apply-all -no-color $PLANFILE
