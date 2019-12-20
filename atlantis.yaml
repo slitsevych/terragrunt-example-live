@@ -6,7 +6,7 @@ workflows:
   terragrunt:
     plan:
       steps:
-      - run: terragrunt plan-all -no-color -out $PLANFILE
+      - run: terragrunt plan-all
     apply:
       steps:
-      - run: terragrunt apply-all -no-color $PLANFILE
+      - run: terragrunt apply-all
