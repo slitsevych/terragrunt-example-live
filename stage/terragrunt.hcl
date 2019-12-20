@@ -11,21 +11,29 @@ remote_state {
   }
 }
 
+terraform {
+  extra_arguments "retry_lock" {
+      commands  = get_terraform_commands_that_need_locking()
+      arguments = ["-lock-timeout=20m"]
+    }
+
+  after_hook "success" {
+      commands = ["apply"]
+      execute = ["echo", "Changes have been applied successfully"]
+      run_on_error = false
+    }
+  }
+
 # ---------------------------------------------------------------------------------------------------------------------
 # GLOBAL PARAMETERS
 # These variables apply to all configurations in this subfolder. These are automatically merged into the child
 # `terragrunt.hcl` config via the include block.
 # ---------------------------------------------------------------------------------------------------------------------
-
 locals {
   default_yaml_path = find_in_parent_folders("empty.yaml")
 }
 
-# Configure root level variables that all resources can inherit.
 inputs = merge(
-  # Configure Terragrunt to use common vars encoded as yaml to help you keep often-repeated variables (e.g., account ID)
-  # DRY. We use yamldecode to merge the maps into the inputs, as opposed to using varfiles due to a restriction in
-  # Terraform >=0.12 that all vars must be defined as variable blocks in modules.
   yamldecode(
     file("${get_terragrunt_dir()}/${find_in_parent_folders("region.yaml", local.default_yaml_path)}"),
   ),

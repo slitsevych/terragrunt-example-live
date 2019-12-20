@@ -17,7 +17,6 @@ inputs = {
   elb_port    = 80
   my_ip = "159.224.7.123/32"
   key = "s.litsevychkeys"
-  public_route = "0.0.0.0/0"
   #dbpass = "${get_env("TF_VAR_master_password_stage", "")}"
 }
 
