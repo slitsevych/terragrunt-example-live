@@ -1,6 +1,8 @@
 version: 3
 projects:
 - dir: stage/us-east-2
+  autoplan:
+      when_modified: ["*.hcl"]
   workflow: terragrunt
 workflows:
   terragrunt:
