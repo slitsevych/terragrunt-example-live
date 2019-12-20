@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//ec2?ref=v0.0.23"
+  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//ec2?ref=v0.1.0"
 }
 
 # Include all settings from the root terragrunt.hcl file
@@ -18,7 +18,7 @@ inputs = {
   my_ip = "159.224.7.123/32"
   key = "s.litsevychkeys"
   public_route = "0.0.0.0/0"
-  dbpass = "${get_env("TF_VAR_master_password_stage", "")}"
+  #dbpass = "${get_env("TF_VAR_master_password_stage", "")}"
 }
 
 dependencies {
