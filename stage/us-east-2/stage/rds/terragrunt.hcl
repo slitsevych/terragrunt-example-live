@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//rds?ref=v0.1.4"
+  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//rds?ref=v0.1.6"
 }
 
 # Include all settings from the root terragrunt.hcl file
@@ -15,7 +15,6 @@ inputs = {
   storage_type      = "standard"
   rds_username = "admin"
   rds_port = 3306
-  #rds_password = "${get_env("TF_VAR_master_password_stage", "")}"
 }
 
 dependencies {
