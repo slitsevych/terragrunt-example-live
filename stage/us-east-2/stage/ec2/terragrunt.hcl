@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//ec2?ref=v0.1.0"
+  source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//ec2?ref=v0.1.2"
 }
 
 # Include all settings from the root terragrunt.hcl file
