@@ -2,7 +2,7 @@ terraform {
   source = "git::git@github.com:slitsevych/terragrunt-example-modules.git//vpc?ref=v0.1.6"
 }
 
-# Include all settings from the root terragrunt.hcl file
+# Include all settings from the root terragrunt.hcl file.
 include {
   path = find_in_parent_folders()
 }
